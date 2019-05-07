@@ -38,13 +38,16 @@
   padding: 0 1.750em;
 }
 
-.sidebarlist__item,
-.sidebarlist__firstitem {
+.sidebar__menu {
+  border-bottom: #0c1224 1px solid;
+}
+.menu__item,
+.menu__item_first {
   height: 4em;
   padding: 1.250em 1.5em 1.250em 4.000em;
 }
 
-.sidebarlist__first_item {
+.menu__item_first {
   padding: 1.250em 1.5em;
   color: #515974;
 }

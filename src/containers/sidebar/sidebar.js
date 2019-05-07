@@ -1,6 +1,6 @@
 import React from 'react';
 import Person from './personalInfo';
-import SidebarList from './sidebarList';
+import SidebarList from './menu';
 class Sidebar extends React.Component {
 	constructor(props){
 		super(props);

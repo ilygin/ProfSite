@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemSidebar from '../blocks/sidebar/itemSidebarList';
+import MenuItem from '../../blocks/sidebar/menuItem';
 
 class SidebarList extends React.Component {
 	constructor(props){
@@ -7,7 +7,7 @@ class SidebarList extends React.Component {
 	}
 
 	render() {
-        let listTemp = [
+        let menuListTemp = [
             {name: "Основное:"},
             {name: "Все курсы"},
             {name: "Мои курсы"},
@@ -15,13 +15,13 @@ class SidebarList extends React.Component {
             {name: "Пройденные курсы"}
         ];
 
-        let sidebar = listTemp.map((item, index) =>
-            <ItemSidebar key={index} item_name={item.name} id={index}/>
+        let menu = menuListTemp.map((item, index) =>
+            <MenuItem key={index} item_name={item.name} id={index}/>
         )
         
 		return (
-			<div>
-                {sidebar}
+			<div className={'sidebar__menu'}>
+                {menu}
             </div>
 		)
 	}

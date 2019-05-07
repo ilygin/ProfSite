@@ -1,14 +1,14 @@
 import React from 'react';
 
-class ItemSidebar extends React.Component {
+class MenuItem extends React.Component {
 	constructor(props){
 		super(props);
 	}
 
 	render() {
         let itemStyle = this.props.id === 0 ?
-                            'sidebarlist__first_item' :
-                            'sidebarlist__item';
+                            'menu__item_first' :
+                            'menu__item';
         
 		return (
 			<div className={itemStyle}>
@@ -18,4 +18,4 @@ class ItemSidebar extends React.Component {
 	}
 }
 
-export default ItemSidebar;
+export default MenuItem;
