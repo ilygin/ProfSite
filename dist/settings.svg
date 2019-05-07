@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="35" height="35">
+	<defs>
+		<image width="35" height="35" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAAXNSR0IB2cksfwAAAKJQTFRFAAAAUVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0XU+3RwAAADZ0Uk5TABn1/0WjgKQWAmotTvq9GI0J4fzoQwS749MVP+b9peWyPrrNY2IgARBYwfvkDbWbzGuFB8BTs3sf7gAAAWhJREFUeJyNVNmWgjAMLQaRRfZVLMjgCowwgvP/vzalIKAHneYhi73EmzQpQlPhFtDKgkPvhYelIAgr4GdPRanVMihEKyC3gSQ+Q9aqphNjgEm0CQbRuqaunyGW7bjI8wMaBr6HXMe2pqC1ugm3OIp3kNA4gV0c4a9wM4JaCGGUwv5g0h/M4x5SwmYEiaoVUo6nyb+faA2hpXbEJc3evunF1takztMdLM5CROzoD9+NUunhny/nhyulkTt+EEPH5ZzlBRR51sFOEI8Q73tP7bUEXAkVhvJK45+dRy3H3wwfDjRLCXVDbFNDSTMdwTduPIfamw4S2pcM6j5xDRntUxK0U4BgqZj9yR03vdfge++ZyhIQCENFRTUwrIqhOmGKuYwuObjMYj7kWQ188gmffOCzAqa6OF7+2B+Z55j6TIXhvhjunWF+WOaQZZ5Z9oJpv5j2FKFf+999f303brSG+YZ8fn86mX/H/gCaqifZn2liIgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Document Header">
+		<g id="Head Right Icons">
+			<use id="Icon Setting" href="#img1" x="0" y="0" />
+		</g>
+	</g>
+</svg>

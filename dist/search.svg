@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" width="29" height="29">
+	<defs>
+		<image width="29" height="29" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNSR0IB2cksfwAAAOdQTFRFAAAAUVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0UVl0SCntYgAAAE10Uk5TAAcXIiQcDwEEW8b/7JIeMtHel2tXYX+5+/h+A135xUIVg/e9/XAmxwpOyaTkS0/KPQZmkJYh9SDg5xn+3Q5Bq5lnFvYSpY555kqm6wXcQuk+AAABJElEQVR4nI3Sa1eCQBAG4C1tUV8kzLukICISXsskDUvJMq3+/+8pF5RrnebLzO5zzszOOUvIMc7OU+n0BeVIPDLZHNzg80IUL0WgcFUslSvVGuoNKYTXTbRkr6XSVtGhQYTWDYzTRfQMv21Tuwm1oib6pweJ6EaeoQww9MosWrEtRhC9uxzk+IZjTFi+RSGO5A5TdwbuE3QGk2UBxQQlFs/SA0pJOtc8LSfpwmLpEZUENOwly0+oJugzVixzfE2J6xqOW+TRjuHLRn11K6Gu6lF9w/ZYNiDSML5jd7qROjCVMNp7/0R7GIz8mR+wYQa6GX1g7MwOlbzeYLc3Q0yGP98O1nxhA+qWHn5HiLnJ1PzUrOXKYatEORL/4MyfnPpdyZcufQO6+hxZOXWufAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Document Header">
+		<g id="Input Search">
+			<use id="Icon Search" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+		</g>
+	</g>
+</svg>

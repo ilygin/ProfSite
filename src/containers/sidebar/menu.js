@@ -1,5 +1,11 @@
 import React from 'react';
 import MenuItem from '../../blocks/sidebar/menuItem';
+import ItemAllCourse from '../../../dist/itemAllCourse.svg';
+import Project from '../../../dist/project.svg';
+import ProcessStudy from '../../../dist/processStudy.svg';
+import Achive from '../../../dist/achive.svg';
+
+
 
 class SidebarList extends React.Component {
 	constructor(props){
@@ -8,15 +14,15 @@ class SidebarList extends React.Component {
 
 	render() {
         let menuListTemp = [
-            {name: "Основное:"},
-            {name: "Все курсы"},
-            {name: "Мои курсы"},
-            {name: "Текущие курсы"},
-            {name: "Пройденные курсы"}
+            {name: "Основное:", imgSvg: null},
+            {name: "Все курсы", imgSvg: ItemAllCourse},
+            {name: "Мои работы", imgSvg: Project},
+            {name: "Процесс обучения", imgSvg: ProcessStudy},
+            {name: "Достижения", imgSvg: Achive}
         ];
 
         let menu = menuListTemp.map((item, index) =>
-            <MenuItem key={index} item_name={item.name} id={index}/>
+            <MenuItem key={index} item_name={item.name} id={index} imgSvg={item.imgSvg}/>
         )
         
 		return (

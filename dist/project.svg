@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 23" width="24" height="23">
+	<defs>
+		<image width="11" height="11" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMSAxMSIgd2lkdGg9IjExIiBoZWlnaHQ9IjExIj4KCTxkZWZzPgoJCTxjbGlwUGF0aCBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNwMSI+CgkJCTxwYXRoIGQ9Ik0wIDBMMTEgMEwxMSAxMUwwIDExWiIgLz4KCQk8L2NsaXBQYXRoPgoJPC9kZWZzPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuc2hwMCB7IGZpbGw6IG5vbmU7c3Ryb2tlOiAjZTZmMWZhO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6IDAuNzUgfSAKCTwvc3R5bGU+Cgk8ZyBpZD0iUGFnZSAxIiBjbGlwLXBhdGg9InVybCgjY3AxKSI+CgkJPHBhdGggaWQ9IlBhdGggMSIgY2xhc3M9InNocDAiIGQ9Ik04LjkyIDEwLjYzTDEuODMgMTAuNjNDMS4wMyAxMC42MyAwLjM3IDkuOTcgMC4zNyA5LjE3TDAuMzcgMi4wOEMwLjM3IDEuMjggMS4wMyAwLjYzIDEuODMgMC42M0w4LjkyIDAuNjNDOS43MiAwLjYzIDEwLjM3IDEuMjggMTAuMzcgMi4wOEwxMC4zNyA5LjE3QzEwLjM3IDkuOTcgOS43MiAxMC42MyA4LjkyIDEwLjYzWk0wLjM4IDguNDVMMTAuMzggOC40NU0yLjM2IDMuMjJMOC4zOSAzLjIyTTIuMzYgNS4yMUw4LjM5IDUuMjEiIC8+Cgk8L2c+Cjwvc3ZnPg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Document Side Bar">
+		<g id="Main">
+			<g id="Button Projects">
+				<use id="Icon Project" href="#img1" transform="matrix(2.233,0,0,2.14,0,0)"/>
+			</g>
+		</g>
+	</g>
+</svg>
