@@ -4,6 +4,10 @@ import {Provider} from "react-redux";
 import configurateStore from './store/configurateStore';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+
+import './style/index.css';
+import './style/sidebar.css';
+
 import MainPage from './containers/mainPage';
 
 

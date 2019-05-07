@@ -1,4 +1,6 @@
 import React from 'react';
+import Sidebar from './sidebar';
+
 
 class MainPage extends React.Component {
 	constructor(props){
@@ -7,9 +9,7 @@ class MainPage extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h2>Hello world! </h2>
-			</div>
+			<Sidebar />
 		)
 	}
 }
