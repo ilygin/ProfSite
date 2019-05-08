@@ -3,23 +3,24 @@
 	flex-direction: column;
 	position: sticky !important;
 	min-height: 100vh;
-	width: 19.250em;
+  width: 16.25em;
 	overflow-x: hidden;
   background-color: #1b2133;
   color: #f5f9fd;
 }
 
 .sidebar__logo {
-  height: 3em;
+  height: 2em;
   width: 100%;
-  padding: 0.85em;
-  font-size: 28px;
+  padding: 0.3em 0 0 0.85em;
+  font-size: 27px;
   font-weight: 500;
 }
 
 .sidebar__person {
   display: flex;
   flex-direction: row;
+  align-items: center;
   height: 8em;
   padding: 1.5em;
   border-bottom: #0c1224 1px solid;
@@ -28,8 +29,8 @@
 
 .person__photo {
   background-color: #f5f9fd;
-  width: 4.875em;
-  height: 4.875em;
+  width: 3.875em;
+  height: 3.875em;
   border-radius: 100%;
 }
 
