@@ -1,45 +1,51 @@
-import {LOGIN_POST_USER_DATA, LOGIN_STATUS_ERROR, LOGIN_STATUS_SUCCESS, LOGIN_STATUS_FAILURE, LOGOUT_USER} from '../actions/action';
+import {
+        LOGIN_POST_USER_DATA,
+        LOGIN_STATUS_ERROR,
+        LOGIN_STATUS_SUCCESS,
+        LOGIN_STATUS_FAILURE,
+        LOGOUT_USER
+        } from '../actions/action';
 
 const initialState = {
-    isFetchingLogin: false,
-    statusLogin: "",
-    msgLogin: "",
-    isAuth: null
+    isFetchingUserData: false,
+    statusAuth: "",
+    authMsg: "",
+    isAuth: false,
+    payload: {}
 };
 
 export default function loginUser(state = initialState, action) {
     switch (action.type) {
         case LOGIN_POST_USER_DATA:
             return Object.assign({}, state, {
-                isFetchingLogin: true
+                isFetchingUserData: true
             });
         case LOGIN_STATUS_SUCCESS:
             return Object.assign({}, state, {
-                isFetchingLogin: false,
-                statusLogin: "success",
-                msgLogin: "",
-                isAuth: true
+                isFetchingUserData: false,
+                statusAuth: action.payload.status,
+                authMsg: "",
+                isAuth: true,
+                payload: {
+                    email: action.payload.email,
+                    roleId: action.payload.roleId
+                }
             });
-        case LOGIN_STATUS_FAILURE:
+        case LOGIN_STATUS_FAILURE_OR_ERROR:
             return Object.assign({}, state, {
-                isFetchingLogin: false,
-                statusLogin: "failure",
-                msgLogin: action.msgLogin,
-                isAuth: false
-            });
-        case LOGIN_STATUS_ERROR:
-            return Object.assign({}, state, {
-                isFetchingLogin: false,
-                statusLogin: 'error',
-                msgLogin: action.msgLogin,
-                isAuth: false
+                isFetchingUserData: false,
+                statusAuth: action.payload.status,
+                authMsg: action.payload.msg,
+                isAuth: false,
+                payload: {}
             });
         case LOGOUT_USER:
             return Object.assign({}, state, {
-                isFetchingLogin: false,
-                statusLogin: '',
-                msgLogin: action.msg,
-                isAuth: false
+                isFetchingUserData: false,
+                statusAuth: '',
+                authMsg: '',
+                isAuth: false,
+                payload: {}
             });
         default:
             return state

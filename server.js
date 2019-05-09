@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.use(webpackDevMiddleware(compiler));
 /**/
 app.use(express.static(path.join(__dirname, 'dist')));
+require('./routes')(app, knex, session);
 
 app.listen(PORT, () => {
     console.log(`==> 🌎  Listening on port %s. Visit ${URL}%s/ in your browser.`, PORT, PORT);
