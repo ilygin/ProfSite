@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PublicSidebar from './publicSidebar/publicSidebar';
+import Content from './mainPageContent/content';
+
 
 class PublicPage extends React.Component {
 	constructor(props){
@@ -8,9 +10,9 @@ class PublicPage extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<Link to={'/main_page'}>Hello Public World!!!</Link>
-
+			<div className={'main_page'}>
+				<PublicSidebar />
+				<Content />
 			</div>
 		)
 	}

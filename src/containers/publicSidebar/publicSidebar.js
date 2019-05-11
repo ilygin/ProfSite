@@ -1,0 +1,33 @@
+import React from 'react';
+import LoginForm from './loginForm';
+import { connect } from 'react-redux';
+import * as userActions from '../../actions/user';
+class PublicSidebar extends React.Component {
+	constructor(props){
+		super(props);
+	}
+
+	render() {
+        const {user, logInUser} = this.props;
+		return (
+			<div  className={'sidebar'}>
+                <div className={'sidebar__logo'}>
+                    Logotype
+                </div>
+                <LoginForm  logIn = {logInUser} 
+                            user = {user}/>
+			</div>
+		)
+	}
+}
+
+const mapStateToProps = state => {
+    return {
+        user: state.loginUser
+    }
+};
+const mapDispatchToProps = {
+    ...userActions,
+  };
+
+export default connect(mapStateToProps, mapDispatchToProps)(PublicSidebar);
