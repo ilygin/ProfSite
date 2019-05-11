@@ -96,11 +96,8 @@ export function signUpUser(email, password) {
 					})
 				});
 				let registrationResultJson = await data.json();
-				if (registrationResultJson.status === "success") {
-					dispatch(loginStatusSuccess(registrationResultJson));
-				}else {
-					dispatch(loginStatusFailureOrError(registrationResultJson));
-				}
+				dispatch(loginStatusFailureOrError(registrationResultJson));
+
 			} catch (e) {
 				dispatch(loginStatusFailureOrError({
 					status: "error",
