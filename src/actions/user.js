@@ -1,10 +1,11 @@
 export const LOGIN_POST_USER_DATA= "LOGIN_POST_USER_DATA";
 export const LOGIN_STATUS_SUCCESS = "LOGIN_STATUS_SUCCESS";
 export const LOGIN_STATUS_FAILURE_OR_ERROR = "LOGIN_STATUS_FAILURE_OR_ERROR";
-export const LOGOUT_USER = "LOGOUT_USER";
 
 export const checkUserFieldFull = () => (
-		{type: LOGIN_POST_USER_DATA}
+		{
+			type: LOGIN_POST_USER_DATA
+		}
 );
 
 
@@ -19,12 +20,6 @@ export const loginStatusFailureOrError = (payload) => (
 	{
 		type: LOGIN_STATUS_FAILURE_OR_ERROR,
 		payload
-	}
-)
-
-export const logoutUser = () => (
-	{
-		type: LOGOUT_USER
 	}
 )
 
@@ -88,7 +83,13 @@ export function logInUser(email, password) {
 // 		return checkUser();
 // 	}
 // }
+export const LOGOUT_USER = "LOGOUT_USER";
 
+export const logoutUser = () => (
+	{
+		type: LOGOUT_USER
+	}
+)
 export function logOutUser() {
 	return function (dispatch) {
 		const logout = async function() {

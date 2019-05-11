@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";
-import * as userAction from "../actions/action";
+import * as userAction from "../actions/user";
 
 class PrivateRoute extends React.Component {
     constructor(props) {

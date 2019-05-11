@@ -1,10 +1,9 @@
 import {
         LOGIN_POST_USER_DATA,
-        LOGIN_STATUS_ERROR,
+        LOGIN_STATUS_FAILURE_OR_ERROR,
         LOGIN_STATUS_SUCCESS,
-        LOGIN_STATUS_FAILURE,
         LOGOUT_USER
-        } from '../actions/action';
+        } from '../actions/user';
 
 const initialState = {
     isFetchingUserData: false,
