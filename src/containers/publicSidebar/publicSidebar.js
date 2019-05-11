@@ -8,14 +8,15 @@ class PublicSidebar extends React.Component {
 	}
 
 	render() {
-        const {user, logInUser} = this.props;
+        const {user, logInUser, signUpUser} = this.props;
 		return (
 			<div  className={'sidebar'}>
                 <div className={'sidebar__logo'}>
                     Logotype
                 </div>
                 <LoginForm  logIn = {logInUser} 
-                            user = {user}/>
+                            user = {user}
+                            signUp = {signUpUser}/>
 			</div>
 		)
 	}

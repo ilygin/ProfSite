@@ -17,7 +17,10 @@ export default function loginUser(state = initialState, action) {
     switch (action.type) {
         case LOGIN_POST_USER_DATA:
             return Object.assign({}, state, {
-                isFetchingUserData: true
+                isFetchingUserData: true,
+                statusAuth: "",
+                authMsg: "",
+                payload: {}
             });
         case LOGIN_STATUS_SUCCESS:
             return Object.assign({}, state, {
@@ -34,7 +37,7 @@ export default function loginUser(state = initialState, action) {
             return Object.assign({}, state, {
                 isFetchingUserData: false,
                 statusAuth: action.payload.status,
-                authMsg: action.payload.msg,
+                authMsg: action.payload.authMsg,
                 isAuth: false,
                 payload: {}
             });

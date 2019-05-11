@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import {bindActionCreators} from "redux";
 import * as userAction from "../actions/user";
 
 class PrivateRoute extends React.Component {
@@ -10,15 +9,15 @@ class PrivateRoute extends React.Component {
         super(props);
     }
     componentWillMount() {
-        this.props.userAction.checkAuthorizationUser();
+        this.props.checkAuthorizationUser();
     }
     render() {
         const { component: Component, ...rest } = this.props;
         return (
             <Route {...rest} render={
                 props => {
-//УБРАТЬ ОТРИЦАНИЕ !!!!!!!!!!!!!!!!!!!!!
-                    return !rest.isAuth ?
+                    console.log(rest)
+                    return rest.isAuth ?
                         <Component {...props} /> : 
                         <Redirect
                             to={{
@@ -38,11 +37,9 @@ const mapStateToProps = state => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        userAction: bindActionCreators(userAction, dispatch)
-    }
-};
+const mapDispatchToProps = {
+    ...userAction,
+  };
 export default connect(mapStateToProps, mapDispatchToProps)(PrivateRoute)
 
 

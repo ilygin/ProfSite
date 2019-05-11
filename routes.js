@@ -20,34 +20,74 @@ module.exports = function(app, knex, session){
             res.redirect('/');
         }
     }
+    
+    app.post('/authAPI/signup', async (req, res, next)=> {
+        try {
+			const countEmailData = await knex
+				.count("id").from("Users")
+                .where({email: req.body.email});
+            const countEmail = countEmailData[0]["count(`id`)"];
+            if(countEmail == 0) {
+                next();
+            }else {
+                res.send({
+                    status: 'failure',
+                    authMsg: 'Указанная почта уже существует'
+                });
+            }
+		}catch(e) {
+			console.log(e);
+            res.status(401).send({
+                status: 'error',
+                authMsg: e.toSteing()
+            });
+		}
+    });
 
-    // app.post('/auth/signup', async (req, res)=> {
-    //     if (req.body.email && req.body.password) {
-    //         const hashPassport = bcrypt.hashSync(req.body.password, 10);
-    //         const currentDate = new Date().toUTCString();
-    //         try {
-    //             await knex('Users')
-    //                 .insert({email: req.body.email, password: hashPassport, createdAt: currentDate, updatedAt: currentDate});
+    app.post('/authAPI/signup', async (req, res)=> {
+        if (req.body.email && req.body.password) {
+            const hashPassport = bcrypt.hashSync(req.body.password, 10);
+            const currentDate = new Date();
+            try {
+                await knex('Users')
+                    .insert({
+                        email: req.body.email,
+                        password: hashPassport,
+                        createdAt: currentDate,
+                        updatedAt: currentDate,
+                        roleId: 1
+                    });
 
-    //             res.send({status: 'success'});
-    //         }catch (e) {
-    //             res.send({status: 'error', authMsg: e});
-    //         }
+                res.status(200).send({
+                    status: 'success',
+                    email: req.body.email,
+                    roleId: 1
+                })
+            }catch (e) {
+                console.log(e);
+                res.send({
+                    status: 'error',
+                    authMsg: e.toSteing()
+                });
+            }
 
-    //     } else {
-    //         res.send({status: 'error', authMsg: 'Ошибка введенных данных'});
-    //     }
-    // });
+        } else {
+            res.send({
+                status: 'failure',
+                authMsg: 'Ошибка введенных данных'
+            });
+        }
+    });
 
     app.post('/authAPI/logInUser', async (req, res)=> {
         try {
             const match = await knex
-                                .select('id', 'password', 'roleId')
-                                .from('Users')
-                                .where({email: req.body.email});
+                .select('id', 'password', 'roleId')
+                .from('Users')
+                .where({email: req.body.email});
 
             if (match.length === 0) {
-                res.status(401).json({
+                res.status(401).send({
                     status: 'failure',
                     authMsg: 'Неверная почта'
                 });
@@ -62,7 +102,7 @@ module.exports = function(app, knex, session){
                         roleId: match[0].roleId
                     });
                 } else {
-                    res.status(401).json({
+                    res.status(401).send({
                         status: 'failure',
                         authMsg: 'Неверный пароль'
                     });
@@ -70,7 +110,7 @@ module.exports = function(app, knex, session){
             }
         }catch (e) {
             console.log(e);
-            res.status(401).json({
+            res.status(401).send({
                 status: 'error',
                 authMsg: 'Сервис не доступен.'
             });
@@ -83,20 +123,21 @@ module.exports = function(app, knex, session){
         })
     });
 
-    // app.get('/auth/isAuthorized', (req, res) => {
-    //     if(req.session.user.length > 0){
-    //         res.json({
-    //             isAuthorized:true,
-    //             status: 'success',
-    //             email: req.body.email,
-    //             roleId: match[0].roleId
-    //         });
-    //     }else {
-    //         res.json({isAuthorized: false});
-    //     }
-    // });
+    app.get('/authAPI/isAuthorized', (req, res) => {
+        if(req.session.user.id > 0){
+            res.send({
+                status: 'success',
+                email: req.body.email,
+                roleId: req.session.user.roleId
+            });
+        }else {
+            res.send({
+                status: 'failure'
+            });
+        }
+    });
 
-    app.get('/account', checkLoginUser, (req, res, next)=>{
+    app.get('/main_page', checkLoginUser, (req, res, next)=>{
         next();
     });
 

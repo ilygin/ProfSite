@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
         let email = document.querySelector(".emailInput").value;
         let password = document.querySelector(".passwordInput").value;
         try {
-            await this.props.signUpUser(email, password);
+            await this.props.signUp(email, password);
         } catch (e) {
             console.log("Error: ", e + "");
         }
@@ -42,20 +42,28 @@ class LoginForm extends React.Component {
     }
 
     render() {
-        return (
-            <div className="right-container__login-form">
-                    <div className="login-form__inputs-group">
-                        <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
-                               placeholder="Почта"/>
-                        <input type="password" className="inputs-group__item passwordInput"
-                               placeholder="Пароль"/>
+
+            if (this.props.user.isAuth) {
+                return <Redirect to={"/main_page"} />
+            }else if (!this.props.user.isFetchingUserData && !this.props.user.isAuth && this.props.user.isAuth !== null) {
+                return(
+                    <div className="right-container__login-form">
+                            <div className="login-form__inputs-group">
+                                <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
+                                    placeholder="Почта"/>
+                                <input type="password" className="inputs-group__item passwordInput"
+                                    placeholder="Пароль"/>
+                            </div>
+                                <div className="login-form__button-groups">
+                                <button className="button-groups__login" onClick={this.onLogInUserClick} type="submit">Войти</button>
+                                <button className="button-groups__signup" onClick={this.onSignUpClick} type="button">Я новичок</button>
+                            </div>
                     </div>
-                        <div className="login-form__button-groups">
-                        <button className="button-groups__login" onClick={this.onLogInUserClick} type="submit">Войти</button>
-                        <button className="button-groups__signup" onClick={this.onSignUpClick} type="button">Я новичок</button>
-                    </div>
-            </div>
-        )
+                )
+            }else {
+                return <div />
+           }
+        
     }
 }
 
