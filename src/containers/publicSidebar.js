@@ -8,7 +8,7 @@ class PublicSidebar extends React.Component {
 	}
 
 	render() {
-        const {user, logInUser, signUpUser} = this.props;
+        const {user, logInUser, signUpUser, checkAuthorizationUser} = this.props;
         
 		return (
 			<div  className={'sidebar'}>
@@ -17,7 +17,8 @@ class PublicSidebar extends React.Component {
                 </div>
                 <LoginForm  logIn = {logInUser} 
                             user = {user}
-                            signUp = {signUpUser}/>
+                            signUp = {signUpUser}
+                            checkAuthorizationUser={checkAuthorizationUser}/>
 			</div>
 		)
 	}

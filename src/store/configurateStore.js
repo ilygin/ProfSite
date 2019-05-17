@@ -6,7 +6,7 @@ import logger from 'redux-logger';
 export default function configurateStore(initialState) {
     const store = createStore(rootReducer, applyMiddleware(
         thunkMiddleware, // позволяет нам отправлять функции
-      //  logger
+        //logger
     ));
 
     if (module.hot) {

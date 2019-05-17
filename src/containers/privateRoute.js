@@ -10,7 +10,7 @@ class PrivateRoute extends React.Component {
     }
     componentWillMount() {
         this.props.checkAuthorizationUser();
-        debugger;
+
     }
     render() {
         const { component: Component, ...rest } = this.props;

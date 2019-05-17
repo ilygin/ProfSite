@@ -15,9 +15,9 @@ class LoginForm extends React.Component {
         this.onLogInUserClick = this.onLogInUserClick.bind(this);
     }
 
-    // componentWillMount() {
-    //     this.props.checkAuthorizationUser();
-    // }
+    componentWillMount() {
+        this.props.checkAuthorizationUser();
+    }
 
     async onSignUpClick(e)  {
         e.preventDefault();
@@ -44,21 +44,29 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const {from} = this.props.location.state || {from: {pathname: '/'}}
+        const {isAuth} = this.props.user;
+
+        if(isAuth) {
+            return <Redirect to={from}/>
+        }else if(!this.props.user.isFetchingUserData && !isAuth){ 
             return (
                 <div className="right-container__login-form">
-                <div className="login-form__inputs-group">
-                    <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
-                        placeholder="Почта"/>
-                    <input type="password" className="inputs-group__item passwordInput"
-                        placeholder="Пароль"/>
+                    <div className="login-form__inputs-group">
+                        <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
+                            placeholder="Почта"/>
+                        <input type="password" className="inputs-group__item passwordInput"
+                            placeholder="Пароль"/>
+                    </div>
+                        <div className="login-form__button-groups">
+                        <button className="button-groups__login" onClick={this.onLogInUserClick} type="submit">Войти</button>
+                        <button className="button-groups__signup" onClick={this.onSignUpClick} type="button">Я новичок</button>
+                    </div>
                 </div>
-                    <div className="login-form__button-groups">
-                    <button className="button-groups__login" onClick={this.onLogInUserClick} type="submit">Войти</button>
-                    <button className="button-groups__signup" onClick={this.onSignUpClick} type="button">Я новичок</button>
-                </div>
-        </div>
-
             )
+        }else {
+            return <div />
+        }
     }
 }
 
