@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../blocks/sidebar/sidebar';
-import Content from './mainPageContent/content';
+import Content from '../blocks/tableContentsContent';
 
 export default class TableContentsPage extends React.Component {
 	constructor(props){
@@ -10,7 +10,8 @@ export default class TableContentsPage extends React.Component {
 	render() {
 		return (
 			<div className={'main_page'}>
-				Suka
+				<Sidebar />
+				<Content />
 			</div>
 		)
 	}
