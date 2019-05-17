@@ -140,4 +140,9 @@ module.exports = function(app, knex, session){
     app.get('/main_page', checkLoginUser, (req, res, next)=>{
         next();
     });
+    
+    app.get('/edit_course', checkLoginUser, (req, res, next)=>{
+        next();
+    });
 };
+    

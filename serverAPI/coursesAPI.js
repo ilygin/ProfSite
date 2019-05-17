@@ -2,7 +2,7 @@ module.exports = function(app, knex){
     app.get('/courseAPI/loadCourses', async (req, res)=>{
         try {
             let data = null;
-            if(req.query.isPublic) {
+            if(req.query.isPublic === "true") {
                 data = await knex
                     .select().from('Courses').where({isPublic: 1});
             }else {

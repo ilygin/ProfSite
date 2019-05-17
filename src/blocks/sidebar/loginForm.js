@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom'
 
+import { withRouter } from "react-router";
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -24,6 +25,7 @@ class LoginForm extends React.Component {
         let password = document.querySelector(".passwordInput").value;
         try {
             await this.props.signUp(email, password);
+            debugger;
         } catch (e) {
             console.log("Error: ", e + "");
         }
@@ -35,38 +37,32 @@ class LoginForm extends React.Component {
         let password = document.querySelector(".passwordInput").value;
         try {
             await this.props.logIn(email, password);
+            this.props.history.push("/main_page");
         } catch (e) {
             console.log("Error: ", e + "");
         }
     }
 
     render() {
+            return (
+                <div className="right-container__login-form">
+                <div className="login-form__inputs-group">
+                    <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
+                        placeholder="Почта"/>
+                    <input type="password" className="inputs-group__item passwordInput"
+                        placeholder="Пароль"/>
+                </div>
+                    <div className="login-form__button-groups">
+                    <button className="button-groups__login" onClick={this.onLogInUserClick} type="submit">Войти</button>
+                    <button className="button-groups__signup" onClick={this.onSignUpClick} type="button">Я новичок</button>
+                </div>
+        </div>
 
-            if (this.props.user.isAuth) {
-                return <Redirect to={"/main_page"} />
-            }else if (!this.props.user.isFetchingUserData && !this.props.user.isAuth && this.props.user.isAuth !== null) {
-                return(
-                    <div className="right-container__login-form">
-                            <div className="login-form__inputs-group">
-                                <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
-                                    placeholder="Почта"/>
-                                <input type="password" className="inputs-group__item passwordInput"
-                                    placeholder="Пароль"/>
-                            </div>
-                                <div className="login-form__button-groups">
-                                <button className="button-groups__login" onClick={this.onLogInUserClick} type="submit">Войти</button>
-                                <button className="button-groups__signup" onClick={this.onSignUpClick} type="button">Я новичок</button>
-                            </div>
-                    </div>
-                )
-            }else {
-                return <div />
-           }
-        
+            )
     }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
 
 /*
 {this.props.newUser.status === "error" ? <div><h3>{this.props.newUser.msg}</h3></div> :

@@ -11,6 +11,7 @@ import './style/mainPage.css';
 
 import MainPage from './containers/mainPage';
 import PublicPage from './containers/publicPage';
+import TableContentsPage from "./containers/tableContentsPage";
 
 const store = configurateStore();
 
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path='/' component={PublicPage}/>
                 <PrivateRoute path='/main_page' component={MainPage}/>
+                <Route path='/edit_course' component={TableContentsPage}/>
             </Switch>
         </BrowserRouter>
     </Provider>,

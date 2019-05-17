@@ -10,13 +10,13 @@ class PrivateRoute extends React.Component {
     }
     componentWillMount() {
         this.props.checkAuthorizationUser();
+        debugger;
     }
     render() {
         const { component: Component, ...rest } = this.props;
         return (
             <Route {...rest} render={
                 props => {
-                    console.log(rest)
                     return rest.isAuth ?
                         <Component {...props} /> : 
                         <Redirect
@@ -32,6 +32,7 @@ class PrivateRoute extends React.Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
         isAuth: state.loginUser.isAuth
     }

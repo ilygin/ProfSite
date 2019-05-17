@@ -1,19 +1,18 @@
 import React from 'react';
-import PublicSidebar from './publicSidebar';
+import Sidebar from '../blocks/sidebar/sidebar';
 import Content from './mainPageContent/content';
 
-export default class PublicPage extends React.Component {
+export default class TableContentsPage extends React.Component {
 	constructor(props){
 		super(props);
 	}
 
 	render() {
 		return (
-		
 			<div className={'main_page'}>
-				<PublicSidebar />
-				<Content />
+				Suka
 			</div>
 		)
 	}
 }
+

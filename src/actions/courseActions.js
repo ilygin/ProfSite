@@ -28,8 +28,7 @@ export function loadCourses(isPublic) {
 		dispatch(requestCourses());
 		const request = async () => {
 			try {
-                debugger;
-                const response = await fetch(`${URL}/courseAPI/loadCourses?isPublic=${+isPublic}`);
+                const response = await fetch(`${URL}/courseAPI/loadCourses?isPublic=${isPublic}`);
                 
                 const responseJson = await response.json();
                 if(responseJson.status ==="success") {

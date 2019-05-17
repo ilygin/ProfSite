@@ -9,6 +9,7 @@ class PublicSidebar extends React.Component {
 
 	render() {
         const {user, logInUser, signUpUser} = this.props;
+        
 		return (
 			<div  className={'sidebar'}>
                 <div className={'sidebar__logo'}>
