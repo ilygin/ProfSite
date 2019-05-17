@@ -4,7 +4,7 @@ import CourseContainer from '../courseContainer';
 
 import { connect } from 'react-redux';
 	
-import * as userActions from '../../actions/user';
+import * as userActions from '../../actions/userActions';
 
 class Content extends React.Component {
 	constructor(props){

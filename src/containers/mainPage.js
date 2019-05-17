@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './sidebar/sidebar';
+import Sidebar from '../blocks/sidebar/sidebar';
 import Content from './mainPageContent/content';
 
 class MainPage extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
-import LoginForm from '../../blocks/sidebar/loginForm';
+import LoginForm from '../blocks/sidebar/loginForm';
 import { connect } from 'react-redux';
-import * as userActions from '../../actions/user';
+import * as userActions from '../actions/userActions';
 class PublicSidebar extends React.Component {
 	constructor(props){
 		super(props);

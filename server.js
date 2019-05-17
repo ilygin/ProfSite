@@ -31,5 +31,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`==> 🌎  Listening on port %s. Visit ${URL}%s/ in your browser.`, PORT, PORT);
+    console.log(`==> 🌎  Listening on port %s. Visit ${URL}%s/ in your browser.`, PORT);
 });

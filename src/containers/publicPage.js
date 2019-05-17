@@ -1,5 +1,5 @@
 import React from 'react';
-import PublicSidebar from './publicSidebar/publicSidebar';
+import PublicSidebar from './publicSidebar';
 import Content from './mainPageContent/content';
 
 

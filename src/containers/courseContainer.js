@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from "react-redux";
 // import { Link } from 'react-router-dom';
 // import {URL} from './../const.js';
-import * as coursesActions from '../actions/loadCourses';
+import * as coursesActions from '../actions/courseActions';
 
 class CourseContainer extends React.Component {
 	constructor(props) {
@@ -18,11 +18,6 @@ class CourseContainer extends React.Component {
 		try {
 			await this.props.loadCourses(!this.props.user.isAuth);
             const {courses} = this.props;
-            let lastCourseId = courses ? [courses.length-1].id :-1; 
-            this.setState({
-                courses,
-                lastCourseId
-            });
 		} catch (e) {
 			console.log('Error: ', e);
 		}
