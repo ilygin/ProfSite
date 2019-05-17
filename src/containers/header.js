@@ -22,7 +22,7 @@ class Header extends React.Component {
                             (
                                 <React.Fragment>
                                     <button className='header__settings' type='button'>
-                                        <img width={'28px'} src={Settings} alt="" />
+                                        <img src={Settings} alt="" />
                                     </button>
                                     <button onClick={this.onLogout} className='header__logout' type='button'>
                                         Выйти

@@ -31,6 +31,9 @@
     font-size: 26px;
     line-height: 48px;
 }
+.header__settings img {
+    width: 28px;
+}
 
 .header__search:focus {
     border-bottom: #515974 1px solid;
