@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../../blocks/sidebar/menuItem';
+import MenuItem from './menuItem';
 import ItemAllCourse from '../../../dist/itemAllCourse.svg';
 import Project from '../../../dist/project.svg';
 import ProcessStudy from '../../../dist/processStudy.svg';

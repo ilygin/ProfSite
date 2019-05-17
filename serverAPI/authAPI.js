@@ -124,7 +124,7 @@ module.exports = function(app, knex, session){
     });
 
     app.get('/authAPI/isAuthorized', (req, res) => {
-        if(req.session.user.id > 0){
+        if(req.session.user.id >= 0){
             res.send({
                 status: 'success',
                 email: req.body.email,
@@ -140,9 +140,9 @@ module.exports = function(app, knex, session){
     app.get('/main_page', checkLoginUser, (req, res, next)=>{
         next();
     });
-
-    app.get('*', (req, res) => {
-        res.sendFile(__dirname + '/dist/index.html')
+    
+    app.get('/edit_course', checkLoginUser, (req, res, next)=>{
+        next();
     });
-
 };
+    

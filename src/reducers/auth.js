@@ -3,7 +3,7 @@ import {
         LOGIN_STATUS_FAILURE_OR_ERROR,
         LOGIN_STATUS_SUCCESS,
         LOGOUT_USER
-        } from '../actions/user';
+        } from '../actions/userActions';
 
 const initialState = {
     isFetchingUserData: false,

@@ -23,8 +23,13 @@ app.use(bodyParser.json());
 app.use(webpackDevMiddleware(compiler));
 /**/
 app.use(express.static(path.join(__dirname, 'dist')));
-require('./routes')(app, knex, session);
+require('./serverAPI/authAPI')(app, knex, session);
+require('./serverAPI/coursesAPI')(app, knex);
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/dist/index.html')
+});
 
 app.listen(PORT, () => {
-    console.log(`==> 🌎  Listening on port %s. Visit ${URL}%s/ in your browser.`, PORT, PORT);
+    console.log(`==> 🌎  Listening on port %s. Visit ${URL}%s/ in your browser.`, PORT);
 });

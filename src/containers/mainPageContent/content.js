@@ -1,8 +1,10 @@
 import React from 'react';
-import Header from '../header';
+import Header from '../../blocks/header';
+import CourseContainer from '../courseContainer';
+
 import { connect } from 'react-redux';
 	
-import * as userActions from '../../actions/user';
+import * as userActions from '../../actions/userActions';
 
 class Content extends React.Component {
 	constructor(props){
@@ -13,9 +15,9 @@ class Content extends React.Component {
 		const {user, logOutUser} = this.props;
 		return (
             <div className={'main_page__content'}>
-			    <Header isAuth={user.isAuth}
-						logOut={logOutUser}/>
-
+			    		<Header isAuth={user.isAuth}
+								logOut={logOutUser}/>
+							<CourseContainer />
             </div>
 		)
 	}
