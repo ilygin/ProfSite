@@ -35,7 +35,7 @@ class Header extends React.Component {
         let btnLogoutAndSettings = this.props.isAuth ? 
                             (
                                 <React.Fragment>
-                                    <Link to={"/editCourse/" + this.state.lastCourseId}>
+                                    <Link to={"/edit_course/" + this.state.lastCourseId}>
                                         <button type='button' onClick>
                                             Создать курс
                                         </button>
