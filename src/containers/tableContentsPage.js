@@ -11,7 +11,7 @@ export default class TableContentsPage extends React.Component {
 		return (
 			<div className={'main_page'}>
 				<Sidebar />
-				<Content />
+				<Content courseId = {this.props.match.params.id}/>
 			</div>
 		)
 	}

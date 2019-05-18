@@ -59,7 +59,7 @@ class TableContentsContent extends React.Component {
 
 	onSaveCourse() {
 		const {courseTitle, units, sections } = this.state;
-		this.props.saveCourseChange(courseTitle, units, sections, 5);
+		this.props.saveCourseChange(courseTitle, units, sections, this.props.courseId);
 	}
 
 	render() {
@@ -81,6 +81,7 @@ class TableContentsContent extends React.Component {
 				<div className={'table_contents__content'}>
                     <input type="text" value={this.state.courseTitle} placeholder="Введите название курса" onChange={this.titleCourseChange}/>
                     <button onClick={this.onSaveCourse}>Сохранить курс</button>
+                    {this.props.editCourseStatus ? this.props.editCourseStatus.msg : ""}
                 </div>  
                 <div className={'table_contents__content'}>
                     <div>
@@ -98,7 +99,8 @@ class TableContentsContent extends React.Component {
 const mapStateToProps = state => {
     return {
         user: state.loginUser,
-        courses: state.courses
+        courses: state.courses,
+        editCourseStatus: state.editCourseStatus
     }
 };
 
