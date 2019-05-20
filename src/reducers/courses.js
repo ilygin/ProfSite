@@ -1,6 +1,6 @@
 import {REQUEST_COURSE,
     RECEIVE_COURSE_SUCCESS,
-        RECEIVE_COURSE_ERROR} from '../actions/courseActions';
+        RECEIVE_COURSE_ERROR} from '../actions/loadLisrCoursesActions';
 
 const initialState = {
     isFetching: false,

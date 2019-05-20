@@ -14,7 +14,7 @@ module.exports = function(app, knex){
                 status: "success"
             });
         }catch(e) {
-            let errorMsg = e.ToString();
+            let errorMsg = e.toString();
             console.error(errorMsg);
             res.send({
                 status: "error",
@@ -28,7 +28,7 @@ module.exports = function(app, knex){
             let lastCourseId = await knex("Courses").max("id");
 		    res.send(lastCourseId);
         } catch (error) {
-            console.error(error.ToString());
+            console.error(error.toString());
             res.status(404).end();
         }
     });
@@ -58,7 +58,25 @@ module.exports = function(app, knex){
         }catch(e) {
             res.send({
                 status: "error",
-                errorMsg: e.ToString()
+                errorMsg: e.toString()
+            })
+        }
+    })
+
+    app.get("/courseAPI/loadTableContents", async(req, res)=> {
+        try {
+            let courseTableContentsQuery = await knex
+                .select("tableContents")
+                .from("Courses")
+                .where({id: req.query.id})
+            res.send({
+                status: "success",
+                payload: courseTableContentsQuery
+            })
+        } catch (error) {
+            res.send({
+                status: "error",
+                errorMsg: error.toString()
             })
         }
     })

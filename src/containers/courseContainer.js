@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CourseItem from '../blocks/courseItem';
-import * as coursesActions from '../actions/courseActions';
+import * as coursesActions from '../actions/loadLisrCoursesActions';
 
 class CourseContainer extends React.Component {
 	constructor(props) {
