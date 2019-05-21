@@ -28,7 +28,8 @@ export default class TableContentsContent extends React.Component {
                 let tableContents = JSON.parse(tableContentsJson);
                 this.setState({
                     units: tableContents.units,
-                    sections: tableContents.sections
+                    sections: tableContents.sections,
+                    courseTitle:  responseJson.payload[0].title
                 });
             }else {
                 this.setState({

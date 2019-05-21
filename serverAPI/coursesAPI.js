@@ -66,7 +66,7 @@ module.exports = function(app, knex){
     app.get("/courseAPI/loadTableContents", async(req, res)=> {
         try {
             let courseTableContentsQuery = await knex
-                .select("tableContents")
+                .select("tableContents", "title")
                 .from("Courses")
                 .where({id: req.query.id})
             res.send({
