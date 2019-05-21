@@ -16,14 +16,13 @@
     flex-direction: row;
     background-color: #f2f6fc;
     height: 3.25em;
-    padding-left: 1.750em;
+    padding: 0 2.5%;
 }
 
 .header__search {
     background-color: #f2f6fc;    
     height: 100%;
     width: 90%;
-    margin-left: 0.5em;
     border: 0;
     color: #515974;
     outline: none;
@@ -53,7 +52,6 @@
 .header__save-course {
     width: 3.192em;
     margin-left: 0.692em;
-    margin-right: 1em;
     border-radius: 4.1px;
     padding: 0px;
     font-family: "Noto Sans";

@@ -1,5 +1,4 @@
 import React from 'react';
-import Settings from '../../dist/settings.svg';
 import Search from '../../dist/search.svg';
 import { Link } from 'react-router-dom';
 import {URL} from '../consts';
@@ -40,10 +39,6 @@ class Header extends React.Component {
                             Создать курс
                         </button>
                     </Link>
-                                            
-                    <button className='header__settings' type='button'>
-                        <img src={Settings} alt="" />
-                    </button>
                     <button onClick={this.onLogout} className='header__logout' type='button'>
                         Выйти
                     </button>

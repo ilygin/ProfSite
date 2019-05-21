@@ -64,12 +64,13 @@ export default class TableContentsContent extends React.Component {
                     <input className={'table-contents__item__input'} type="text" defaultValue={section.title}/>
                 </li>)
 			return(
-				<ul>
+				<ul className={'table-contents__section-list'}>
 					<li className={'table-contents__item item_unit'}>
                         <input className={'table-contents__item__input'} type="text" defaultValue={unit}/>
                     </li>
 					{currentLiList}
-					<button onClick={this.createSection.bind(this, unitIndex, currentLiList.length)}>Создать section</button>
+                    <button className={'table-contents__item__button'} 
+                            onClick={this.createSection.bind(this, unitIndex, currentLiList.length)}>Создать раздел</button>
                 </ul>
 			)
 		}) : <li/>
@@ -90,12 +91,14 @@ export default class TableContentsContent extends React.Component {
                     </button>
                 </div>
                   
-                <div className={'table-contents_container'}>
-                    
+                <div className={'table-contents_container'}> 
                         <ul className={'table-contents_ul'}>   
                             {contentList}
+                            <button className={'table-contents__item__button create-unit'} 
+                                    onClick={this.createUnit}>
+                                        Создать главу
+                            </button>
                         </ul>
-                    <button onClick={this.createUnit}>Создать главу</button>
                 </div>
 			</div>
 		)

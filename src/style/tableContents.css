@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #000;
 }
 
 .table-contents_ul {
@@ -16,15 +15,15 @@
     height: 3.35em;
     margin-top: 0.25em;
     padding-left: 2.3em;
-    border: 1px solid #a5a6bb;
-    background-color: #f2f6fc;
+    border: 1px solid #515974;
+    background-color: #e4ebf7;
     background-clip: border-box;
     border-radius: .25rem;
     color: #515974;
 }
 
 .table-contents__item__input {
-    background-color: #f2f6fc;    
+    background-color: #e4ebf7;    
     height: 100%;
     width: 90%;
     margin-left: 0.5em;
@@ -40,8 +39,29 @@
 .item_section {
     margin-left: 2em;
 }
-.list-courses__item:hover {
-	color: #a5a6bb;
-	border-color: #d0d0d0;
-	/* background-color: #eeeeee; */
+
+.table-contents__item__button {
+    width: 9.5em;
+    height: 3.35em;
+    margin: 0.2em 0 0 2em;
+    padding: .375rem .75rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: 16px;
+    color: #515974;
+    background-color: #e4ebf7;
+    border-color: #515974;
+    cursor: pointer;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;        
+}
+
+.create-unit {
+    margin-left: 0;
+}
+
+.table-contents__section-list{
+    padding: 0 0.1em 0.1em 0.1em;
+    margin: 0.3em 0;
+    border-radius: 0.25em;
+    background: #f2f5fc;
 }
