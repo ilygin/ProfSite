@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
             return <Redirect to={from}/>
         }else if(!this.props.user.isFetchingUserData && !isAuth){ 
             return (
-                <div className="right-container__login-form">
+                <div className="sidebar__login-form">
                     <div className="login-form__inputs-group">
                         <input type="email" className="inputs-group__item emailInput" aria-describedby="emailHelp"
                             placeholder="Почта"/>
