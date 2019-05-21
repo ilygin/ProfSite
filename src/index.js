@@ -9,6 +9,7 @@ import './style/index.css';
 import './style/sidebar.css';
 import './style/mainPage.css';
 import './style/courseList.css';
+import './style/tableContents.css';
 
 import MainPage from './containers/mainPage';
 import PublicPage from './containers/publicPage';

@@ -1,0 +1,47 @@
+.table-contents_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+
+.table-contents_ul {
+    list-style: none;
+    width: 95%;
+}
+
+.table-contents__item {
+    display: flex;
+    align-items: center;
+    height: 3.35em;
+    margin-top: 0.25em;
+    padding-left: 2.3em;
+    border: 1px solid #a5a6bb;
+    background-color: #f2f6fc;
+    background-clip: border-box;
+    border-radius: .25rem;
+    color: #515974;
+}
+
+.table-contents__item__input {
+    background-color: #f2f6fc;    
+    height: 100%;
+    width: 90%;
+    margin-left: 0.5em;
+    border: 0;
+    color: #515974;
+    outline: none;
+    font-family: "Noto Sans";
+    font-weight: 600;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.item_section {
+    margin-left: 2em;
+}
+.list-courses__item:hover {
+	color: #a5a6bb;
+	border-color: #d0d0d0;
+	/* background-color: #eeeeee; */
+}

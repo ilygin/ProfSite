@@ -33,22 +33,22 @@ class Header extends React.Component {
     
 	render() {
         let btnLogoutAndSettings = this.props.isAuth ? 
-                            (
-                                <React.Fragment>
-                                    <Link to={"/edit_course/" + this.state.lastCourseId}>
-                                        <button type='button' onClick>
-                                            Создать курс
-                                        </button>
-                                    </Link>
-                                                            
-                                    <button className='header__settings' type='button'>
-                                        <img src={Settings} alt="" />
-                                    </button>
-                                    <button onClick={this.onLogout} className='header__logout' type='button'>
-                                        Выйти
-                                    </button>
-                                </React.Fragment>
-                            ) : <div/>
+            (
+                <React.Fragment>
+                    <Link to={"/edit_course/" + this.state.lastCourseId}>
+                        <button type='button' className={"header__create-course"}>
+                            Создать курс
+                        </button>
+                    </Link>
+                                            
+                    <button className='header__settings' type='button'>
+                        <img src={Settings} alt="" />
+                    </button>
+                    <button onClick={this.onLogout} className='header__logout' type='button'>
+                        Выйти
+                    </button>
+                </React.Fragment>
+            ) : <div/>
 		return (
             <div className={'content__header'}>
                 <img src={Search} alt="" />

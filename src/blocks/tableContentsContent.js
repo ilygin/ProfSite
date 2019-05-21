@@ -4,10 +4,20 @@ export default class TableContentsContent extends React.Component {
 	constructor(props){
         super(props);
         this.state = {};
+        
+		this.onLogout = this.onLogout.bind(this);
 		this.createUnit = this.createUnit.bind(this);
 		this.onSaveCourse = this.onSaveCourse.bind(this);
 		this.titleCourseChange = this.titleCourseChange.bind(this);
 	}
+    onLogout(e)  {
+		e.preventDefault();
+		try {
+			this.props.logOut();
+		}catch (error) {
+			console.log(`Error: ${error}`);
+		}
+    }
 
     async componentWillMount() {
         try {
@@ -45,35 +55,46 @@ export default class TableContentsContent extends React.Component {
     }
 	
 	render() {
-        debugger;
         let contentList = this.state.units ? this.state.units.map((unit,unitIndex)=> {
 			let currentLi = this.state.sections.filter(section => section.unitId === unitIndex);
 			currentLi = currentLi.sort((a,b)=> (a.id - b.id));
-			let currentLiList = currentLi.map(section => <li>{section.number +" " + section.title} </li>)
+			let currentLiList = currentLi.map(section => 
+                <li className={'table-contents__item item_section'}>
+                    {section.number}
+                    <input className={'table-contents__item__input'} type="text" defaultValue={section.title}/>
+                </li>)
 			return(
 				<ul>
-					<li>{unit}</li>
+					<li className={'table-contents__item item_unit'}>
+                        <input className={'table-contents__item__input'} type="text" defaultValue={unit}/>
+                    </li>
 					{currentLiList}
 					<button onClick={this.createSection.bind(this, unitIndex, currentLiList.length)}>Создать section</button>
-                
                 </ul>
 			)
 		}) : <li/>
 
 		return (
 			<div className={'table_contents__content'}>
-				<div className={'table_contents__content'}>
-                    <input type="text" value={this.state.courseTitle} placeholder="Введите название курса" onChange={this.titleCourseChange}/>
-                    <button onClick={this.onSaveCourse}>Сохранить курс</button>
+                <div className={'content__header'}>
+                    <input type='text' 
+                            value={this.state.courseTitle}
+                            placeholder='Введите название курса'
+                            className={'header__search'} 
+                            onChange={this.titleCourseChange}/>
+
                     {this.props.editCourseStatus ? this.props.editCourseStatus.msg : ""}
-                </div>  
-                <div className={'table_contents__content'}>
-                    <div>
-                        <ul>   
+                    <button onClick={this.onSaveCourse} className={'header__save-course'}>Сохранить курс</button>
+                    <button onClick={this.onLogout} className='header__logout' type='button'>
+                        Выйти
+                    </button>
+                </div>
+                  
+                <div className={'table-contents_container'}>
+                    
+                        <ul className={'table-contents_ul'}>   
                             {contentList}
                         </ul>
-
-                    </div>
                     <button onClick={this.createUnit}>Создать главу</button>
                 </div>
 			</div>
@@ -93,7 +114,7 @@ export default class TableContentsContent extends React.Component {
         let newelement = {
             title: `Новый раздел`,
 			unitId,
-			number: `${++unitId} ${++sectionsInUnitCount}`,
+			number: `${++unitId}.${++sectionsInUnitCount}. `,
             id: currentsectionsLength
         }
         this.setState(prevState => ({

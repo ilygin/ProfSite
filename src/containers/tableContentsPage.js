@@ -3,6 +3,7 @@ import Sidebar from '../blocks/sidebar/sidebar';
 import Content from '../blocks/tableContentsContent';
 import {connect} from 'react-redux';
 import * as saveCourseActions from '../actions/saveCourseActions';
+import * as userActions from '../actions/userActions';
 
 class TableContentsPage extends React.Component {
 	constructor(props){
@@ -11,14 +12,15 @@ class TableContentsPage extends React.Component {
 
 	
 	render() {
-		const {editCourseStatus,loadTableContents, saveCourseChange, tableContent} = this.props;
+		const {editCourseStatus, logOutUser, saveCourseChange, tableContent} = this.props;
 		return (
 			<div className={'main_page'}>
 				<Sidebar />
 				<Content courseId = {this.props.match.params.id}
 						 editCourseStatus = {editCourseStatus}
 						 saveCourseChange = {saveCourseChange}
-						 tableContent = {tableContent}/>
+						 tableContent = {tableContent}
+						 logOut={logOutUser}/>
 			</div>
 		)
 	}
@@ -33,6 +35,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
 	...saveCourseActions,
+	...userActions,
   };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TableContentsPage);
