@@ -10,9 +10,8 @@ class CourseContainer extends React.Component {
 
 	async componentDidMount() {
 		try {
-			
 			await this.props.loadCourses(!this.props.user.isAuth);
-         } catch (e) {
+    } catch (e) {
 			console.log('Error: ', e);
 		}
 	}
@@ -25,8 +24,8 @@ class CourseContainer extends React.Component {
 				id={item.id}/>
         );
 		return (
-			<div>
-				<ul className="left-container__list-courses">
+			<div className={"list-course_container"}>
+				<ul className="list-courses_ul">
 					{list}			
 				</ul>
 			</div>

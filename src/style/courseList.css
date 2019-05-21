@@ -1,0 +1,31 @@
+.list-course_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.list-courses_ul {
+    list-style: none;
+    width: 95%;
+}
+
+.list-courses__item {
+    display: flex;
+    align-items: center;
+    height: 3.35em;
+    margin-top: 0.25em;
+    padding-left: 2.3em;
+    border: 1px solid #a5a6bb;
+    background-color: #f2f6fc;
+    background-clip: border-box;
+    border-radius: .25rem;
+    color: #515974;
+    font-weight: 600;
+    line-height: 1.5;
+    word-wrap: break-word;}
+
+.list-courses__item:hover {
+	color: #a5a6bb;
+	border-color: #d0d0d0;
+	/* background-color: #eeeeee; */
+}

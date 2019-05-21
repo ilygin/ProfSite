@@ -8,6 +8,7 @@ import PrivateRoute from './containers/privateRoute';
 import './style/index.css';
 import './style/sidebar.css';
 import './style/mainPage.css';
+import './style/courseList.css';
 
 import MainPage from './containers/mainPage';
 import PublicPage from './containers/publicPage';
