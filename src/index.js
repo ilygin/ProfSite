@@ -11,6 +11,7 @@ import './style/mainPage.css';
 import './style/courseList.css';
 import './style/tableContents.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import './style/customDraft.css';
 
 import MainPage from './containers/mainPage';
 import PublicPage from './containers/publicPage';

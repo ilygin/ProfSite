@@ -11,38 +11,23 @@ export default class EditCoursePage extends React.Component {
 		this.onEditorStateChange = this.onEditorStateChange.bind(this);
 	}
 
-	componentDidMount() {	
-		// const {typePage} = this.props.pathParams;
-		// let titlePlaceholder = this.chooseTitlePage(typePage); 
-		// this.setState({titlePlaceholder});
+	async componentDidMount() {	
+		const data = await fetch(`${URL}/courseAPI/loadPage/1/1`);
+		console.log(data)
+		let content = await data.json();
+		debugger;
+		let contentRaw = convertFromRaw(JSON.parse(content.payload));
+		let editorState = EditorState.createWithContent(contentRaw);
+		this.setState({editorState});
 	}
-
-	componentWillReceiveProps(nextProps) {
-		// const {typePage, pageNumber} = nextProps.pathParams;
-		// const {courseDataItems} = nextProps.courseData;
-		// let newTitle = this.state.titleValue;
-		// let editorState;
-		// if (courseDataItems !== undefined && courseDataItems[pageNumber] !== undefined) {
-		// 	const {title, pageContent} = courseDataItems[pageNumber];
-		// 	newTitle = title;
-		// 	let content = convertFromRaw(JSON.parse(pageContent));
-		// 	editorState = EditorState.createWithContent(content);
-		// }else {
-		// 	newTitle = this.chooseTitlePage(typePage)
-		// }
-		// this.setState({
-		// 	editorState,
-		// 	titleValue: newTitle 
-		// })
-    }
     
 	render() { 
-        let { editorState, titlePlaceholder, titleValue } = this.state;
+        let { editorState } = this.state;
 		return (
             <div className={'table_contents__content'}>
             <div className={'content__header'}>
                 <h3 className={'header__search'}>Название курса</h3>
-                <button onClick={this.onSaveCourse} className={'header__save-course'}>Сохранить страницу</button>
+                <button onClick={this.onSavePageContent} className={'header__save-course'}>Сохранить страницу</button>
                 <button onClick={this.onLogout} className='header__logout' type='button'>
                     Выйти
                 </button>
@@ -60,16 +45,26 @@ export default class EditCoursePage extends React.Component {
 
         )
     }
-    onSavePageContent(e) {
+    async onSavePageContent(e) {
 		e.preventDefault();
-		// let title = document.querySelector(".titleCourse").value;
-		// let convertToRawEditorData = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
-
-		// try {
-		// 	this.props.savePageData(title, convertToRawEditorData, this.props.pathParams.courseId, this.props.pathParams.pageNumber);
-		// }catch (e) {
-		// 	console.log(e);
-		// }
+		let convertToRawEditorData = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
+		try {
+			let data = await fetch(`${URL}/courseAPI/savePage/`, {
+				method: 'post',
+				credentials: 'include',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					payload: convertToRawEditorData,
+					courseId: "1",
+					pageNumber: "1"
+				})
+			});
+		}catch (e) {
+			console.log(e);
+		}
 	}
 
 	onEditorStateChange(editorState) {

@@ -13,7 +13,7 @@ module.exports = function(app, knex, session){
         res.send(data);
     });
 
-    function checkLoginUser(req, res, next) {
+    const checkLoginUser = (req, res, next) => {
         if (req.session.user) {
             next();
         }else {
@@ -124,7 +124,7 @@ module.exports = function(app, knex, session){
     });
 
     app.get('/authAPI/isAuthorized', (req, res) => {
-        if(req.session.user.id >= 0){
+        if(req.session.user && req.session.user.id >= 0){
             res.send({
                 status: 'success',
                 email: req.body.email,
