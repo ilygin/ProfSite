@@ -38,21 +38,38 @@
 
 .item_section {
     margin-left: 2em;
+    width: 90%;
 }
 
-.table-contents__item__button {
+.table-contents__item__edit {
+    height: 100%;
+}
+
+.table-contents__item__button,
+.item__edit_btn {
     width: 9.5em;
     height: 3.35em;
     margin: 0.2em 0 0 2em;
     padding: .375rem .75rem;
-    border: 1px solid transparent;
     border-radius: .25rem;
     font-size: 16px;
     color: #515974;
     background-color: #e4ebf7;
-    border-color: #515974;
+    border: 1px solid #515974;
     cursor: pointer;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;        
+}
+
+.item__edit_btn {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border: 0;
+    border-left: 1px solid #515974;
+}
+
+.item__edit_btn:hover {
+    color: #000;
 }
 
 .create-unit {

@@ -24,7 +24,7 @@ class TableContentsPage extends React.Component {
 				saveCourseChange = {saveCourseChange}
 				tableContent = {tableContent}
 				logOut={logOutUser}/> :
-			<EditCoursePage />;
+			<EditCoursePage pathParams = {this.props.match}/>;
 		return (
 			<div className={'main_page'}>
 				<Sidebar />

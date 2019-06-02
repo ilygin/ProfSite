@@ -23,6 +23,7 @@
     background-color: #f2f6fc;    
     height: 100%;
     width: 90%;
+    margin-left: 0.692em;
     border: 0;
     color: #515974;
     outline: none;
@@ -42,18 +43,21 @@
 .header__settings,
 .header__logout,
 .header__create-course,
-.header__save-course {
+.header__save-course,
+.header__back_btn {
     border: 0;
     cursor: pointer;
     background: transparent;
 }
 .header__logout,
 .header__create-course,
-.header__save-course {
-    width: 3.192em;
+.header__save-course,
+.header__back_btn {
+    min-width: 3.192em;
+    height: 100%;
     margin-left: 0.692em;
     border-radius: 4.1px;
-    padding: 0px;
+    padding: 2px;
     font-family: "Noto Sans";
     font-weight: 400;
     font-size: 26px;
@@ -61,9 +65,17 @@
     outline: none;
 }
 
+.header__back_btn {
+    margin-left: 0em;
+    padding-right: 10px;
+    border-right: 1px solid;
+    border-radius: 0;
+}
+
 .header__create-course {
     height: 100%;
-    width: 5.7em;
+    min-width: 5.9em;
+    margin-left: 0;
 }
 .header__save-course {
     min-width: 9em;
@@ -71,6 +83,8 @@
 
 .header__logout:hover,
 .header__create-course:hover,
-.header__save-course:hover {
+.header__save-course:hover,
+.header__back_btn:hover {
     border: #515974 1px solid;
+    border-radius: 4.1px;
 }

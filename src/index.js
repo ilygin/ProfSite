@@ -26,7 +26,7 @@ ReactDOM.render(
                 <Route exact path='/' component={PublicPage}/>
                 <PrivateRoute path='/main_page' component={MainPage}/>
                 <Route path='/edit_course/:id' component={EditCoursePage}/>
-                <Route path='/edit_page/:courseId/:pageId' component={EditCoursePage}/>
+                <Route path='/edit_page/:courseId/:pageNumber' component={EditCoursePage}/>
             </Switch>
         </BrowserRouter>
     </Provider>,

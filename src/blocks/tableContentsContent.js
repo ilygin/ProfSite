@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import {URL} from '../consts';
 export default class TableContentsContent extends React.Component {
 	constructor(props){
@@ -56,18 +58,32 @@ export default class TableContentsContent extends React.Component {
     }
 	
 	render() {
-        let contentList = this.state.units ? this.state.units.map((unit,unitIndex)=> {
+        let contentList = this.state.units ? this.state.units.map((unit, unitIndex)=> {
 			let currentLi = this.state.sections.filter(section => section.unitId === unitIndex);
 			currentLi = currentLi.sort((a,b)=> (a.id - b.id));
 			let currentLiList = currentLi.map(section => 
-                <li className={'table-contents__item item_section'}>
-                    {section.number}
-                    <input className={'table-contents__item__input'} type="text" defaultValue={section.title}/>
+                <li className={'table-contents__item '}>
+                    <div className={'item_section'}>
+                        {section.number}
+                        <input  className={'table-contents__item__input'}
+                                type="text" 
+                                onChange={this.sectionTitleChange.bind(this, {unitId: section.unitId, id: section.id})} 
+                                defaultValue={section.title}/>
+                    </div>
+
+                    <Link to={`/edit_page/${this.props.courseId}/${section.id}`} className={'table-contents__item__edit'}> 
+                        <button className={'item__edit_btn'}>
+                            Редактировать
+                        </button>
+                    </Link>
                 </li>)
 			return(
 				<ul className={'table-contents__section-list'}>
 					<li className={'table-contents__item item_unit'}>
-                        <input className={'table-contents__item__input'} type="text" defaultValue={unit}/>
+                        <input  className={'table-contents__item__input'}
+                                type="text" 
+                                defaultValue={unit}
+                                onChange={this.unitTitleChange.bind(this, unitIndex)}/>
                     </li>
 					{currentLiList}
                     <button className={'table-contents__item__button'} 
@@ -125,7 +141,24 @@ export default class TableContentsContent extends React.Component {
             sections: [...prevState.sections, newelement]
         }))
       }
-
+      
+    sectionTitleChange(params, event) {
+        let currentState = this.state.sections;
+        let changeSectionIndex = currentState.findIndex(section => section.unitId===params.unitId && section.id===params.id);
+        currentState[changeSectionIndex].title = event.target.value;
+        this.setState({
+            sections: currentState
+        })
+        
+    }
+    unitTitleChange(unitIndex, event) {
+        let currentState = this.state.units;
+        currentState[unitIndex] = event.target.value;
+        this.setState({
+            units: currentState
+        })
+        
+    }
 	titleCourseChange(event) {
 		console.log(this.state.courseTitle);
 		this.setState({courseTitle: event.target.value});
