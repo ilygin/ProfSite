@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import LoginForm from '../blocks/sidebar/loginForm';
 import { connect } from 'react-redux';
 import * as userActions from '../actions/userActions';
@@ -12,9 +14,11 @@ class PublicSidebar extends React.Component {
         
 		return (
 			<div  className={'sidebar'}>
-                <div className={'sidebar__logo'}>
-                    Logotype
-                </div>
+                <Link to={"/main_page"}>
+                    <div className={'sidebar__logo'}>
+                        Logotype
+                    </div>
+                </Link>
                 <LoginForm  logIn = {logInUser} 
                             user = {user}
                             signUp = {signUpUser}

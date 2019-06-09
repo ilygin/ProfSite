@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import Person from './personalInfo';
 import SidebarList from './menu';
 class Sidebar extends React.Component {
@@ -9,9 +10,11 @@ class Sidebar extends React.Component {
 	render() {
 		return (
 			<div  className={'sidebar'}>
-                <div className={'sidebar__logo'}>
-                    Logotype
-                </div>
+				<Link to={"/main_page"}>
+					<div className={'sidebar__logo'}>
+						Logotype
+					</div>
+				</Link>
                 <Person />
                 <SidebarList />
 			</div>

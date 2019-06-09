@@ -66,12 +66,13 @@ module.exports = function(app, knex){
     app.get("/courseAPI/loadTableContents", async(req, res)=> {
         try {
             let courseTableContentsQuery = await knex
-                .select("tableContents", "title")
+                .select("tableContents", "title", "authorId")
                 .from("Courses")
                 .where({id: req.query.id})
             res.send({
                 status: "success",
-                payload: courseTableContentsQuery
+                payload: courseTableContentsQuery,
+                isUserAuthor: req.session.user && courseTableContentsQuery[0].authorId == req.session.user.id
             })
         } catch (error) {
             res.send({
@@ -121,7 +122,6 @@ module.exports = function(app, knex){
                     courseId: req.params.courseId,
                     pageNumber: req.params.pageNumber,
                 })
-
             res.status(200).send({
                 status: 'success',
                 payload: data[0].content
