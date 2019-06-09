@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class CourseItem extends Component {
     render() {
         const { title, id} = this.props;
-        let link = "/course/" + id + "/1";
+        let link = "/course/" + id;
         return (
             <Link to={link} className="link-course">
                 <li className="list-courses__item">

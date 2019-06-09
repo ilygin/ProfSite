@@ -16,6 +16,7 @@ import './style/customDraft.css';
 import MainPage from './containers/mainPage';
 import PublicPage from './containers/publicPage';
 import EditCoursePage from "./containers/editCoursePage";
+import CoursePage from "./containers/coursePage";
 
 const store = configurateStore();
 
@@ -27,6 +28,8 @@ ReactDOM.render(
                 <PrivateRoute path='/main_page' component={MainPage}/>
                 <Route path='/edit_course/:id' component={EditCoursePage}/>
                 <Route path='/edit_page/:courseId/:pageNumber' component={EditCoursePage}/>
+                <Route path='/course/:courseId' component={CoursePage}/>
+                <Route path='/course_page/:courseId/:pageNumber' component={CoursePage}/>            
             </Switch>
         </BrowserRouter>
     </Provider>,
