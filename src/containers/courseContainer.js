@@ -12,7 +12,7 @@ class CourseContainer extends React.Component {
 		try {
 			await this.props.loadCourses(!this.props.user.isAuth, this.props.isPrivateCourse);
     } catch (e) {
-			console.log('Error: ', e);
+			console.error('Error: ', e);
 		}
 	}
 

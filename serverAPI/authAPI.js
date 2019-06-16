@@ -36,7 +36,7 @@ module.exports = function(app, knex, session){
                 });
             }
 		}catch(e) {
-			console.log(e);
+			console.error(e);
             res.status(401).send({
                 status: 'error',
                 authMsg: e.toSteing()
@@ -64,7 +64,7 @@ module.exports = function(app, knex, session){
                     roleId: 1
                 })
             }catch (e) {
-                console.log(e);
+                console.error(e);
                 res.send({
                     status: 'error',
                     authMsg: e.toSteing()
@@ -109,7 +109,7 @@ module.exports = function(app, knex, session){
                 }
             }
         }catch (e) {
-            console.log(e);
+            console.error(e);
             res.status(401).send({
                 status: 'error',
                 authMsg: 'Сервис не доступен.'

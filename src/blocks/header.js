@@ -16,7 +16,7 @@ class Header extends React.Component {
 		try {
 			this.props.logOut();
 		}catch (error) {
-			console.log(`Error: ${error}`);
+			console.error(`Error: ${error}`);
 		}
     }
     async componentDidMount() {
@@ -26,7 +26,7 @@ class Header extends React.Component {
             let lastCourseId = lastCourseIdJson[0]["max(`id`)"] + 1;
             this.setState({lastCourseId}); 
 		} catch (e) {
-			console.log('Error: ', e);
+			console.error('Error: ', e);
 		}
     }
     

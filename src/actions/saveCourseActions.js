@@ -43,7 +43,6 @@ export function saveCourseChange(courseTitle, units, sections, courseId) {
                         courseId
 					})
 				});
-				debugger
                 const responseJson = await responseSaveOrUpdateCourse.json();
                 if(responseJson.status ==="success") {
                     dispatch(receiveCourseChangeSuccess());
@@ -51,8 +50,6 @@ export function saveCourseChange(courseTitle, units, sections, courseId) {
                     dispatch(receiveCourseChangeError(responseJson.errorMsg));
                 }
 			} catch (e) {
-				debugger
-
 				dispatch(receiveCourseChangeError(e.toString()));
 			}
 		};

@@ -35,11 +35,6 @@ export function logInUser(email, password) {
 			return;
 		}
 		const checkUserData = async (email, password) => {
-			console.group("user.js");
-            console.log(email);
-            console.log(password);
-            console.log(URL);
-            console.groupEnd("user.js");
 			try {
 				let data = await fetch(`${URL}/authAPI/logInUser/`, {
 					method: 'post',

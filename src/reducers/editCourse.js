@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export default function editCourseStatus(state = initialState, action) {
-    console.log(action)
     switch (action.type) {
         case REQUEST_COURSE_CHANGE:
             return Object.assign({}, state, {

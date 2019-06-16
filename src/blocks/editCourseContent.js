@@ -19,7 +19,6 @@ export default class EditCoursePage extends React.Component {
 		let editorState;
 		try{ 
 			const data = await fetch(`${URL}/courseAPI/loadPage/${params.courseId}/${params.pageNumber}`);
-			console.log(data)
 			let content = await data.json();
 			let contentRaw = convertFromRaw(JSON.parse(content.payload));
 			editorState = EditorState.createWithContent(contentRaw);
@@ -79,7 +78,7 @@ export default class EditCoursePage extends React.Component {
 				})
 			});
 		}catch (e) {
-			console.log(e);
+			console.error(e);
 		}
 	}
 

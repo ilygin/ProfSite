@@ -14,7 +14,6 @@ class CoursePage extends React.Component {
 
 	
 	render() {
-        debugger;
 		const {logOutUser, tableContent, isAuth} = this.props;
         const PageContent = this.props.match.path.includes("/course/") ? 
         <TableContent courseId = {this.props.match.params.courseId}

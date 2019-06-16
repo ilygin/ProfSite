@@ -19,7 +19,7 @@ export default class CourseContent extends React.Component {
 		try {
 			this.props.logOut();
 		}catch (error) {
-			console.log(`Error: ${error}`);
+			console.error(`Error: ${error}`);
 		}
     }
 
@@ -30,8 +30,6 @@ export default class CourseContent extends React.Component {
 		try{ 
 			const data = await fetch(`${URL}/courseAPI/loadPage/${params.courseId}/${params.pageNumber}`);
             let content = await data.json();
-			console.log(content)
-
             let contentRaw = convertFromRaw(JSON.parse(content.payload));
             editorState = EditorState.createWithContent(contentRaw);
 		} catch(e) {

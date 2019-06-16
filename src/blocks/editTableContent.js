@@ -17,7 +17,7 @@ export default class TableContentsContent extends React.Component {
 		try {
 			this.props.logOut();
 		}catch (error) {
-			console.log(`Error: ${error}`);
+			console.error(`Error: ${error}`);
 		}
     }
 
@@ -160,7 +160,6 @@ export default class TableContentsContent extends React.Component {
         
     }
 	titleCourseChange(event) {
-		console.log(this.state.courseTitle);
 		this.setState({courseTitle: event.target.value});
 	}
 

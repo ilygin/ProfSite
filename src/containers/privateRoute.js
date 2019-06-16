@@ -32,7 +32,6 @@ class PrivateRoute extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
         isAuth: state.loginUser.isAuth
     }

@@ -12,7 +12,7 @@ export default class TableContent extends React.Component {
 		try {
 			this.props.logOut();
 		}catch (error) {
-			console.log(`Error: ${error}`);
+			console.error(`Error: ${error}`);
 		}
     }
 

@@ -25,9 +25,8 @@ class LoginForm extends React.Component {
         let password = document.querySelector(".passwordInput").value;
         try {
             await this.props.signUp(email, password);
-            debugger;
         } catch (e) {
-            console.log("Error: ", e + "");
+            console.error("Error: ", e + "");
         }
     }
 
@@ -39,7 +38,7 @@ class LoginForm extends React.Component {
             await this.props.logIn(email, password);
             this.props.history.push("/main_page");
         } catch (e) {
-            console.log("Error: ", e + "");
+            console.error("Error: ", e + "");
         }
     }
 
