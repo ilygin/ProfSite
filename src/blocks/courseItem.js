@@ -27,7 +27,7 @@ export default class CourseItem extends Component {
         let link = "/course/" + id;
         console.log(this.props);
         debugger
-        let deleteButton = !this.props.isAuthor ?
+        let deleteButton = this.props.isAuthor ?
             <button className={'item__delete-course'} onClick={this.onClickDeleteCourse}>
                 Удалить
             </button>:null;

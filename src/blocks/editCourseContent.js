@@ -17,15 +17,21 @@ export default class EditCoursePage extends React.Component {
 	async componentDidMount() {
 		let {params} = this.props.pathParams;
 		let editorState;
+		let title = "Заголовок";
 		try{ 
 			const data = await fetch(`${URL}/courseAPI/loadPage/${params.courseId}/${params.pageNumber}`);
 			let content = await data.json();
-			let contentRaw = convertFromRaw(JSON.parse(content.payload));
+			let contentRaw = convertFromRaw(JSON.parse(content.payload.content));
+
 			editorState = EditorState.createWithContent(contentRaw);
+			let tableContents = JSON.parse(content.payload.table);
+			title = tableContents.sections[params.pageNumber-1].title;
+			console.log(title);
 		} catch(e) {
+			console.error(e);
 			editorState = EditorState.createEmpty();
 		}		
-		this.setState({editorState});
+		this.setState({editorState, title});
 	}
     
 	render() { 
@@ -39,7 +45,7 @@ export default class EditCoursePage extends React.Component {
                    		Назад
                 	</button>
 				</Link>
-                <h3 className={'header__search'}>Название курса</h3>
+                <h3 className={'header__search'}>{this.state.title}</h3>
                 <button onClick={this.onSavePageContent} className={'header__save-page'}>Сохранить страницу</button>
                 <button onClick={this.onLogout} className='header__logout' type='button'>
                     Выйти
