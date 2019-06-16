@@ -19,12 +19,19 @@ class CourseContainer extends React.Component {
 	
 
 	render() {
-		const list = this.props.courses.payload.map(item =>
-			<CourseItem 
-				key={item.id.toString()} 
-				title={item.title} 
-				id={item.id}/>
-        );
+		const list = this.props.courses.payload.map(item => {
+				console.log(item.authorId == this.props.user.id);
+				console.log(item.authorId)
+				console.log(this.props.user.id)
+				return (<CourseItem 
+					key={item.id.toString()} 
+					title={item.title} 
+					id={item.id}
+					isAuthor= {item.authorId == this.props.user.id}/>
+				)
+		}
+					);
+		
 		return (
 			<div className={"list-course_container"}>
 				<ul className="list-courses_ul">

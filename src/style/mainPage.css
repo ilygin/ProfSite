@@ -25,7 +25,7 @@
     align-items: center;
     background-color: #f2f6fc;    
     height: 100%;
-    width: 76%;
+    width: 72%;
     padding-left: 0.692em;
     border: 0;
     color: #515974;
@@ -100,4 +100,27 @@
 .header__save-page:hover {
     border: #515974 1px solid;
     border-radius: 4.1px;
+}
+
+.item__delete-course {
+    width: 9.5em;
+    height: 3.35em;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    font-size: 16px;
+    color: #515974;
+    background-color: #e4ebf7;
+    border: 1px solid #515974;
+    cursor: pointer;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;        
+}
+
+.link-course {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.link-course a {
+    width: 100%;
 }

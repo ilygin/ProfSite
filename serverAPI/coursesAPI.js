@@ -125,12 +125,30 @@ module.exports = function(app, knex){
                     courseId: req.params.courseId,
                     pageNumber: req.params.pageNumber,
                 })
+
+            let courseTableContentsQuery = await knex
+                .select("tableContents")
+                .from("Courses")
+                .where({id: req.params.courseId})
+                
             res.status(200).send({
                 status: 'success',
-                payload: data[0].content
+                payload: {
+                    content: data[0].content,
+                    table: courseTableContentsQuery[0].tableContents
+                }
             })
         } catch (error) {
             res.redirect("/main_page");
+        }
+    })
+
+    app.get("/courseAPI/deleteCourse/:id", async(req, res)=>{
+        try {
+            await knex("Courses").where({id: req.params.id}).del();
+            res.send({status: "success"});
+        }catch(e) {
+            res.end();
         }
     })
 };
