@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 class MenuItem extends React.Component {
 	constructor(props){
 		super(props);
@@ -13,12 +13,17 @@ class MenuItem extends React.Component {
 						<div className={"item__icon"}><img src={this.props.imgSvg} alt="" /></div>:
 						null;
 					
-
+		const link = this.props.route || "/";
 		return (
-			<div className={itemStyle}>
-				{itemImg}
-                {this.props.item_name}
-            </div>
+			
+			<React.Fragment>
+				<Link to={link}>
+					<div className={itemStyle}>
+						{itemImg}
+						{this.props.item_name}
+					</div>
+				</Link>
+			</React.Fragment>
 		)
 	}
 }

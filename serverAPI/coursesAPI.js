@@ -2,7 +2,10 @@ module.exports = function(app, knex){
     app.get('/courseAPI/loadCourses', async (req, res)=>{
         try {
             let data = null;
-            if(req.query.isPublic === "true") {
+            if(req.query.isPrivateCourse === "true") {
+                data = await knex
+                    .select().from('Courses').where({authorId: req.session.user.id});
+            }else if(req.query.isPublic === "true") {
                 data = await knex
                     .select().from('Courses').where({isPublic: 1});
             }else {

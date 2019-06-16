@@ -15,9 +15,9 @@ class Content extends React.Component {
 		const {user, logOutUser} = this.props;
 		return (
             <div className={'main_page__content'}>
-			    		<Header isAuth={user.isAuth}
-								logOut={logOutUser}/>
-							<CourseContainer />
+				<Header isAuth={user.isAuth}
+						logOut={logOutUser}/>
+				<CourseContainer isPrivateCourse={this.props.path==="/my_courses"}/>
             </div>
 		)
 	}

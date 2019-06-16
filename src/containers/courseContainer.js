@@ -8,13 +8,15 @@ class CourseContainer extends React.Component {
 		super(props);
 	}
 
-	async componentDidMount() {
+	async componentWillMount() {
 		try {
-			await this.props.loadCourses(!this.props.user.isAuth);
+			await this.props.loadCourses(!this.props.user.isAuth, this.props.isPrivateCourse);
     } catch (e) {
 			console.log('Error: ', e);
 		}
 	}
+
+	
 
 	render() {
 		const list = this.props.courses.payload.map(item =>

@@ -11,7 +11,7 @@ class MainPage extends React.Component {
 		return (
 			<div className={'main_page'}>
 				<Sidebar />
-				<Content />
+				<Content path={this.props.match.path}/>
 			</div>
 		)
 	}

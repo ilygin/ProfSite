@@ -26,6 +26,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path='/' component={PublicPage}/>
                 <PrivateRoute path='/main_page' component={MainPage}/>
+                <PrivateRoute path='/my_courses' component={MainPage}/>
                 <PrivateRoute path='/edit_course/:id' component={EditCoursePage}/>
                 <PrivateRoute path='/edit_page/:courseId/:pageNumber' component={EditCoursePage}/>
                 <Route path='/course/:courseId' component={CoursePage}/>

@@ -70,7 +70,7 @@ export default class TableContentsContent extends React.Component {
                                 onChange={this.sectionTitleChange.bind(this, {unitId: section.unitId, id: section.id})} 
                                 defaultValue={section.title}/>
                     </div>
-
+                    
                     <Link to={`/edit_page/${this.props.courseId}/${section.id}`} className={'table-contents__item__edit'}> 
                         <button className={'item__edit_btn'}>
                             Редактировать

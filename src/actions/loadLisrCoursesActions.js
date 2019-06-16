@@ -23,12 +23,12 @@ export const requestCoursesError = (errorMsg) => (
     }
 )
 
-export function loadCourses(isPublic) {
+export function loadCourses(isPublic, isPrivateCourse) {
 	return function (dispatch) {
 		dispatch(requestCourses());
 		const request = async () => {
 			try {
-                const response = await fetch(`${URL}/courseAPI/loadCourses?isPublic=${isPublic}`);
+                const response = await fetch(`${URL}/courseAPI/loadCourses?isPublic=${isPublic}&isPrivateCourse=${isPrivateCourse}`);
                 
                 const responseJson = await response.json();
                 if(responseJson.status ==="success") {
@@ -40,6 +40,6 @@ export function loadCourses(isPublic) {
 				dispatch(requestCoursesError(e.toString()));
 			}
 		};
-		return request(isPublic);
+		return request(isPublic, isPrivateCourse);
 	}
 }
