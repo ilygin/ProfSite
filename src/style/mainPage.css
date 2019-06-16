@@ -19,11 +19,14 @@
     padding: 0 2.5%;
 }
 
-.header__search {
+.header__search,
+.header__search_course {
+    display: flex;
+    align-items: center;
     background-color: #f2f6fc;    
     height: 100%;
-    width: 90%;
-    margin-left: 0.692em;
+    width: 76%;
+    padding-left: 0.692em;
     border: 0;
     color: #515974;
     outline: none;
@@ -32,6 +35,11 @@
     font-size: 26px;
     line-height: 48px;
 }
+
+.header__search_course {
+    width: 81%;
+}
+
 .header__settings img {
     width: 28px;
 }
@@ -44,7 +52,8 @@
 .header__logout,
 .header__create-course,
 .header__save-course,
-.header__back_btn {
+.header__back_btn,
+.header__save-page {
     border: 0;
     cursor: pointer;
     background: transparent;
@@ -52,7 +61,10 @@
 .header__logout,
 .header__create-course,
 .header__save-course,
-.header__back_btn {
+.header__back_btn,
+.header__save-page {
+    display: flex;
+    align-items: center;
     min-width: 3.192em;
     height: 100%;
     margin-left: 0.692em;
@@ -77,14 +89,15 @@
     min-width: 5.9em;
     margin-left: 0;
 }
-.header__save-course {
+.header__save-page {
     min-width: 9em;
 }
 
 .header__logout:hover,
 .header__create-course:hover,
 .header__save-course:hover,
-.header__back_btn:hover {
+.header__back_btn:hover,
+.header__save-page:hover {
     border: #515974 1px solid;
     border-radius: 4.1px;
 }

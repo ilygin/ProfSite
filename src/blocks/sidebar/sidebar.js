@@ -12,10 +12,9 @@ class Sidebar extends React.Component {
 			<div  className={'sidebar'}>
 				<Link to={"/main_page"}>
 					<div className={'sidebar__logo'}>
-						Logotype
+						C-matika
 					</div>
 				</Link>
-                <Person />
                 <SidebarList />
 			</div>
 		)

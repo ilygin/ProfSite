@@ -41,7 +41,7 @@ export default class EditCoursePage extends React.Component {
                 	</button>
 				</Link>
                 <h3 className={'header__search'}>Название курса</h3>
-                <button onClick={this.onSavePageContent} className={'header__save-course'}>Сохранить страницу</button>
+                <button onClick={this.onSavePageContent} className={'header__save-page'}>Сохранить страницу</button>
                 <button onClick={this.onLogout} className='header__logout' type='button'>
                     Выйти
                 </button>

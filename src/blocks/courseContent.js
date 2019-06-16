@@ -29,9 +29,10 @@ export default class CourseContent extends React.Component {
         let isAuthor = false;
 		try{ 
 			const data = await fetch(`${URL}/courseAPI/loadPage/${params.courseId}/${params.pageNumber}`);
-			console.log(data)
             let content = await data.json();
-			let contentRaw = convertFromRaw(JSON.parse(content.payload.content));
+			console.log(content)
+
+            let contentRaw = convertFromRaw(JSON.parse(content.payload));
             editorState = EditorState.createWithContent(contentRaw);
 		} catch(e) {
 			editorState = EditorState.createEmpty();
@@ -55,11 +56,11 @@ export default class CourseContent extends React.Component {
                    		Назад
                 	</button>
 				</Link>
-                <h3 className={'header__search'}>Название курса</h3>
+                <h3 className={'header__search_course'}>Название курса</h3>
                 {logoutButton}
             </div>
               
-            <div className={'table-contents_container'}> 
+            <div className={'course-content_container'}> 
                 <Editor
                     toolbarHidden
                     wrapperClassName="demo-wrapper"

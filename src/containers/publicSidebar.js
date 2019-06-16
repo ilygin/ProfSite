@@ -16,7 +16,7 @@ class PublicSidebar extends React.Component {
 			<div  className={'sidebar'}>
                 <Link to={"/main_page"}>
                     <div className={'sidebar__logo'}>
-                        Logotype
+                        C-matika
                     </div>
                 </Link>
                 <LoginForm  logIn = {logInUser} 

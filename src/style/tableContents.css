@@ -1,7 +1,12 @@
-.table-contents_container {
+.table-contents_container,
+.course-content_container {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.course-content_container{
+    padding: 0px 4em;
 }
 
 .table-contents_ul {
@@ -9,9 +14,13 @@
     width: 95%;
 }
 
-.table-contents__item {
+.table-contents__item,
+.table-contents__item__input {
     display: flex;
     align-items: center;
+
+}
+.table-contents__item {
     height: 3.35em;
     margin-top: 0.25em;
     padding-left: 2.3em;
@@ -37,6 +46,7 @@
 }
 
 .item_section {
+    display: flex;
     margin-left: 2em;
     width: 90%;
 }

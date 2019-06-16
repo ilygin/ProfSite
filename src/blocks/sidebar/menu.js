@@ -16,9 +16,7 @@ class SidebarList extends React.Component {
         let menuListTemp = [
             {name: "Основное:", imgSvg: null},
             {name: "Все курсы", imgSvg: ItemAllCourse, route: "/main_page"},
-            {name: "Мои работы", imgSvg: Project, route: "/my_courses"},
-            // {name: "Процесс обучения", imgSvg: ProcessStudy},
-            // {name: "Достижения", imgSvg: Achive}
+            {name: "Мои работы", imgSvg: Project, route: "/my_courses"}
         ];
 
         let menu = menuListTemp.map((item, index) =>
