@@ -144,5 +144,12 @@ module.exports = function(app, knex, session){
     app.get('/edit_course', checkLoginUser, (req, res, next)=>{
         next();
     });
+    
+    app.get('/', (req, res, next)=>{
+        if (!req.session.user) {
+            res.redirect('/');
+        }
+        next();
+    })
 };
     

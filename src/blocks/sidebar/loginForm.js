@@ -44,11 +44,11 @@ class LoginForm extends React.Component {
 
     render() {
         const {from} = this.props.location.state || {from: {pathname: '/'}}
-        const {isAuth} = this.props.user;
+        const {isAuth,isFetchingUserData} = this.props.user;
 
         if(isAuth) {
             return <Redirect to={from}/>
-        }else if(!this.props.user.isFetchingUserData && !isAuth){ 
+        }else if(!isFetchingUserData || !isAuth){ 
             return (
                 <div className="sidebar__login-form">
                     <div className="login-form__inputs-group">
