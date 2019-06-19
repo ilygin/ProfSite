@@ -98,7 +98,7 @@ export default class TableContentsContent extends React.Component {
                     <input type='text' 
                             value={this.state.courseTitle}
                             placeholder='Введите название курса'
-                            className={'header__search'} 
+                            className={'header__title'} 
                             onChange={this.titleCourseChange}/>
 
                     {this.props.editCourseStatus ? this.props.editCourseStatus.msg : ""}

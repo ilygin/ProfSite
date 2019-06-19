@@ -75,13 +75,13 @@ export default class TableContent extends React.Component {
                 Выйти
             </button> : null;
         const editButton = this.state.isUserAuthor ? 
-            <Link to={`/edit_course/${this.props.courseId}`} className='header__logout'>
+            <Link to={`/edit_course/${this.props.courseId}`} className='header__edit'>
                 Редактировать
             </Link> : null
 		return (
 			<div className={'table_contents__content'}>
                 <div className={'content__header'}>
-                    <span  className={'header__search'}>
+                    <span  className={'header__title'}>
                         {this.state.courseTitle}
                     </span>
                     {editButton}

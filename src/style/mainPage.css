@@ -20,7 +20,8 @@
 }
 
 .header__search,
-.header__search_course {
+.header__search_cours,
+.header__title {
     display: flex;
     align-items: center;
     background-color: #f2f6fc;    
@@ -32,8 +33,12 @@
     outline: none;
     font-family: "Noto Sans";
     font-weight: 400;
-    font-size: 26px;
+    font-size: 30px;
+
     line-height: 48px;
+}
+.header__title {
+    font-weight: 600;
 }
 
 .header__search_course {
@@ -53,19 +58,21 @@
 .header__create-course,
 .header__save-course,
 .header__back_btn,
-.header__save-page {
+.header__save-page,
+.header__edit {
     border: 0;
     cursor: pointer;
     background: transparent;
 }
 .header__logout,
+.header__edit,
 .header__create-course,
 .header__save-course,
 .header__back_btn,
 .header__save-page {
     display: flex;
     align-items: center;
-    min-width: 3.192em;
+    width: 3em;
     height: 100%;
     margin-left: 0.692em;
     border-radius: 4.1px;
@@ -75,6 +82,14 @@
     font-size: 26px;
     color: #515974;
     outline: none;
+}
+
+.header__edit {
+    width: 7em;
+}
+
+.header__save-course {
+    width: 8em;
 }
 
 .header__back_btn {
@@ -97,7 +112,8 @@
 .header__create-course:hover,
 .header__save-course:hover,
 .header__back_btn:hover,
-.header__save-page:hover {
+.header__save-page:hover,
+.header__edit:hvoer {
     border: #515974 1px solid;
     border-radius: 4.1px;
 }

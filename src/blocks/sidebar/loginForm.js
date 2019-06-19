@@ -70,10 +70,3 @@ class LoginForm extends React.Component {
 }
 
 export default withRouter(LoginForm);
-
-/*
-{this.props.newUser.status === "error" ? <div><h3>{this.props.newUser.msg}</h3></div> :
-                        (this.props.loginUser.statusLogin === "error" || this.props.loginUser.statusLogin === "failure")?
-                            <div><h3>{this.props.loginUser.msgLogin}</h3></div> :
-                                this.props.newUser.status === "success" ? <div><h3>Поздравляю с успешной регистрацией</h3></div> : (false)}
-*/

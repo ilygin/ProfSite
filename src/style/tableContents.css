@@ -40,7 +40,8 @@
     color: #515974;
     outline: none;
     font-family: "Noto Sans";
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 28px;
     line-height: 1.5;
     word-wrap: break-word;
 }
@@ -49,6 +50,9 @@
     display: flex;
     margin-left: 2em;
     width: 90%;
+    font-size: 27px;
+    font-weight: 300;
+
 }
 
 .table-contents__item__edit {
@@ -62,7 +66,7 @@
     margin: 0.2em 0 0 2em;
     padding: .375rem .75rem;
     border-radius: .25rem;
-    font-size: 16px;
+    font-size: 18px;
     color: #515974;
     background-color: #e4ebf7;
     border: 1px solid #515974;
@@ -76,6 +80,7 @@
     height: 100%;
     border: 0;
     border-left: 1px solid #515974;
+        font-size: 18px;
 }
 
 .item__edit_btn:hover {
